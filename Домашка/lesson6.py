@@ -69,7 +69,7 @@
 
 # # task 5
 #
-# def encrypt caeser(sent):
+# def encrypt(sent):
 #     chiper = ""
 #     for i in sent:
 #         symb_num = ord(i)
@@ -124,7 +124,7 @@
 # choise = int(input("If you want to encrypt press 1, decrypt - press 2: "))
 #
 # if choise == 1:
-#     encrypt caesar(sentense)
+#     encrypt(sentense)
 # elif choise == 2:
 #     decrypt(sentense)
 # else:
