@@ -130,4 +130,5 @@
 # else:
 #     print("You have crooked hands")
 
-
+def diff(a, b):
+    return a - b
