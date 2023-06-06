@@ -166,6 +166,6 @@ choise = int(input("If you want to encrypt press 1, decrypt - press 2: "))
 if choise == 1:
     print(encrypt_vigenere(sentense, key))
 elif choise == 2:
-     (decrypt_vigenere(sentense, key))
+    print(decrypt_vigenere(sentense, key))
 else:
      print("You have crooked hands")
