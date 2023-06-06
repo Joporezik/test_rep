@@ -131,3 +131,41 @@
 #     print("You have crooked hands")
 
 
+
+# task 6
+def encrypt_vigenere(sent, keys):
+    if len(sent) > len(keys):
+        keys_len = (len(sent) // len(keys)) + 1
+        keys = keys * keys_len
+        keys = keys[:len(sent)]
+    encrypt_word = ""
+    for symb, key in zip(sent, keys):
+        encrypt_symb = (ord(symb) + (ord(key) - 65))
+        if encrypt_symb > 90:
+            encrypt_symb -= 26
+        encrypt_word += chr(encrypt_symb)
+    return encrypt_word
+
+def decrypt_vigenere(sent, keys):
+    if len(sent) > len(keys):
+        keys_len = (len(sent) // len(keys)) + 1
+        keys = keys * keys_len
+        keys = keys[:len(sent)]
+    decrypt_word = ""
+    for symb, key in zip(sent, keys):
+        decrypt_symb = (ord(symb) - (ord(key) - 65))
+        if decrypt_symb < 65:
+            decrypt_symb += 26
+        decrypt_word += chr(decrypt_symb)
+    return decrypt_word
+
+sentense = input("Enter your sentense: ")
+key = input("Enter your key: ")
+choise = int(input("If you want to encrypt press 1, decrypt - press 2: "))
+
+if choise == 1:
+    print(encrypt_vigenere(sentense, key))
+elif choise == 2:
+     (decrypt_vigenere(sentense, key))
+else:
+     print("You have crooked hands")
