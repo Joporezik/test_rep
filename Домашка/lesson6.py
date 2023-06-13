@@ -132,40 +132,90 @@
 
 
 
-# task 6
-def encrypt_vigenere(sent, keys):
-    if len(sent) > len(keys):
-        keys_len = (len(sent) // len(keys)) + 1
-        keys = keys * keys_len
-        keys = keys[:len(sent)]
-    encrypt_word = ""
-    for symb, key in zip(sent, keys):
-        encrypt_symb = (ord(symb) + (ord(key) - 65))
-        if encrypt_symb > 90:
-            encrypt_symb -= 26
-        encrypt_word += chr(encrypt_symb)
-    return encrypt_word
+# # task 6
+# def encrypt_vigenere(sent, keys):
+#     if len(sent) > len(keys):
+#         keys_len = (len(sent) // len(keys)) + 1
+#         keys = keys * keys_len
+#         keys = keys[:len(sent)]
+#     encrypt_word = ""
+#     for symb, key in zip(sent, keys):
+#         encrypt_symb = (ord(symb) + (ord(key) - 65))
+#         if encrypt_symb > 90:
+#             encrypt_symb -= 26
+#         encrypt_word += chr(encrypt_symb)
+#     return encrypt_word
+#
+# def decrypt_vigenere(sent, keys):
+#     if len(sent) > len(keys):
+#         keys_len = (len(sent) // len(keys)) + 1
+#         keys = keys * keys_len
+#         keys = keys[:len(sent)]
+#     decrypt_word = ""
+#     for symb, key in zip(sent, keys):
+#         decrypt_symb = (ord(symb) - (ord(key) - 65))
+#         if decrypt_symb < 65:
+#             decrypt_symb += 26
+#         decrypt_word += chr(decrypt_symb)
+#     return decrypt_word
+#
+# sentense = input("Enter your sentense: ")
+# key = input("Enter your key: ")
+# choise = int(input("If you want to encrypt press 1, decrypt - press 2: "))
+#
+# if choise == 1:
+#     print(encrypt_vigenere(sentense, key))
+# elif choise == 2:
+#     print(decrypt_vigenere(sentense, key))
+# else:
+#      print("You have crooked hands")
 
-def decrypt_vigenere(sent, keys):
-    if len(sent) > len(keys):
-        keys_len = (len(sent) // len(keys)) + 1
-        keys = keys * keys_len
-        keys = keys[:len(sent)]
-    decrypt_word = ""
-    for symb, key in zip(sent, keys):
-        decrypt_symb = (ord(symb) - (ord(key) - 65))
-        if decrypt_symb < 65:
-            decrypt_symb += 26
-        decrypt_word += chr(decrypt_symb)
-    return decrypt_word
 
-sentense = input("Enter your sentense: ")
-key = input("Enter your key: ")
-choise = int(input("If you want to encrypt press 1, decrypt - press 2: "))
+import random
+# # task 7
+# M = int(input("Enter the number of lines: "))
+# N = int(input("Enter the number of columns: "))
+# min_num = int(input("Enter the minimum number: "))
+# max_num = int(input("Enter the maximum number: "))
+# matrix = [[random.randint(min_num, max_num) for i in range(N)] for j in range(M)]
+# for el in matrix:
+#     print(el)
 
-if choise == 1:
-    print(encrypt_vigenere(sentense, key))
-elif choise == 2:
-    print(decrypt_vigenere(sentense, key))
-else:
-     print("You have crooked hands")
+
+
+# # task 8
+# M = int(input("Enter the number of lines: "))
+# N = int(input("Enter the number of columns: "))
+# min_num = int(input("Enter the minimum number: "))
+# max_num = int(input("Enter the maximum number: "))
+# matrix = [[random.randint(min_num, max_num) for i in range(N)] for j in range(M)]
+# min_elem = matrix[0][0]
+# max_elem = matrix[0][0]
+# min_index = {'i': None, 'j': None}
+# max_index = {'i': None, 'j': None}
+# for i in range(M):
+#     for j in range(N):
+#         if matrix[i][j] > max_elem:
+#             max_elem = matrix[i][j]
+#             max_index['i'] = i
+#             max_index['j'] = j
+#
+#         elif matrix[i][j] <= min_elem:
+#             min_elem = matrix[i][j]
+#             min_index['i'] = i
+#             min_index['j'] = j
+# for el in matrix:
+#     print(el)
+# max_ind = []
+# min_ind = []
+# for key, value in max_index.items():
+#     max_ind.append(value)
+# for key, value in min_index.items():
+#     min_ind.append(value)
+#
+# print("Max index:", max_ind)
+# print("Min index:", min_ind)
+
+
+
+
