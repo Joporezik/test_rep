@@ -179,7 +179,9 @@ def random_matrix(M, N, min_num, max_num):
     for el in matrix:
         matr.append(el)
     return matr
-print(random_matrix(4, 5, 0, 10))
+for row in random_matrix(4, 5, 0, 10):
+    print(row)
+print("")
 
 
 # task 8
@@ -210,10 +212,30 @@ def max_min_elem_in_matrix(matrix, M, N):
     print("Min index:", min_ind)
 
 matr = random_matrix(4, 5, 0, 10)
-print(matr)
+for row in matr:
+    print(row)
 max_min_elem_in_matrix(matr, 4, 5)
+print("")
 
 
 
 # task 9
+def sum_el_matrix(matr, M, N):
+    sum = 0
+    for i in range(M):
+        for j in range(N):
+            sum += matr[i][j]
+    print("Sum elements of matrix:", sum)
+
+    for i in range(M):
+        sum_column = 0
+        for j in range(N):
+            sum_column += matr[i][j]
+        print("Column percent:", sum_column / sum * 100)
+
+matr = random_matrix(4, 5, 0, 10)
+for row in matr:
+    print(row)
+
+print(sum_el_matrix(matr, 4, 5))
 
