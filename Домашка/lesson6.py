@@ -239,3 +239,21 @@ for row in matr:
 
 print(sum_el_matrix(matr, 4, 5))
 
+
+# task 10
+def mul_k_column_el(matr, M, N, K):
+    for i in range(M):
+        elem = matr[i][K]
+        for j in range(N):
+            matr[i][j] *= elem
+
+    for row in matr:
+        print(row)
+
+matr = random_matrix(4, 5, 0, 10)
+for row in matr:
+    print(row)
+
+K = int(input("Enter K column from 0 to 4: "))
+print("Matrix after multiplication by K column:")
+mul_k_column_el(matr, 4, 5, K)
