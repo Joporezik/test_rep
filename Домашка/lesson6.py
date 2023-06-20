@@ -184,68 +184,87 @@ for row in random_matrix(4, 5, 0, 10):
 print("")
 
 
-# task 8
-def max_min_elem_in_matrix(matrix, M, N):
-    min_elem = matrix[0][0]
-    max_elem = matrix[0][0]
-    min_index = {'i': None, 'j': None}
-    max_index = {'i': None, 'j': None}
+# # task 8
+# def max_min_elem_in_matrix(matrix, M, N):
+#     min_elem = matrix[0][0]
+#     max_elem = matrix[0][0]
+#     min_index = {'i': None, 'j': None}
+#     max_index = {'i': None, 'j': None}
+#     for i in range(M):
+#         for j in range(N):
+#             if matrix[i][j] > max_elem:
+#                 max_elem = matrix[i][j]
+#                 max_index['i'] = i
+#                 max_index['j'] = j
+#
+#             elif matrix[i][j] <= min_elem:
+#                 min_elem = matrix[i][j]
+#                 min_index['i'] = i
+#                 min_index['j'] = j
+#     max_ind = []
+#     min_ind = []
+#     for key, value in max_index.items():
+#         max_ind.append(value)
+#     for key, value in min_index.items():
+#         min_ind.append(value)
+#
+#     print("Max index:", max_ind)
+#     print("Min index:", min_ind)
+#
+# matr = random_matrix(4, 5, 0, 10)
+# for row in matr:
+#     print(row)
+# max_min_elem_in_matrix(matr, 4, 5)
+# print("")
+#
+#
+#
+# # task 9
+# def sum_el_matrix(matr, M, N):
+#     sum = 0
+#     for i in range(M):
+#         for j in range(N):
+#             sum += matr[i][j]
+#     print("Sum elements of matrix:", sum)
+#
+#     for i in range(M):
+#         sum_column = 0
+#         for j in range(N):
+#             sum_column += matr[i][j]
+#         print("Column percent:", sum_column / sum * 100)
+#
+# matr = random_matrix(4, 5, 0, 10)
+# for row in matr:
+#     print(row)
+#
+# print(sum_el_matrix(matr, 4, 5))
+#
+#
+# # task 10
+# def mul_k_column_el(matr, M, N, K):
+#     for i in range(M):
+#         elem = matr[i][K]
+#         for j in range(N):
+#             matr[i][j] *= elem
+#
+#     for row in matr:
+#         print(row)
+#
+# matr = random_matrix(4, 5, 0, 10)
+# for row in matr:
+#     print(row)
+#
+# K = int(input("Enter K column from 0 to 4: "))
+# print("Matrix after multiplication by K column:")
+# mul_k_column_el(matr, 4, 5, K)
+
+
+def sum_l_line_el(matr, M, N, L):
     for i in range(M):
         for j in range(N):
-            if matrix[i][j] > max_elem:
-                max_elem = matrix[i][j]
-                max_index['i'] = i
-                max_index['j'] = j
+            elem = matr[L][j]
+            matr[i][j] += elem
 
-            elif matrix[i][j] <= min_elem:
-                min_elem = matrix[i][j]
-                min_index['i'] = i
-                min_index['j'] = j
-    max_ind = []
-    min_ind = []
-    for key, value in max_index.items():
-        max_ind.append(value)
-    for key, value in min_index.items():
-        min_ind.append(value)
-
-    print("Max index:", max_ind)
-    print("Min index:", min_ind)
-
-matr = random_matrix(4, 5, 0, 10)
-for row in matr:
-    print(row)
-max_min_elem_in_matrix(matr, 4, 5)
-print("")
-
-
-
-# task 9
-def sum_el_matrix(matr, M, N):
-    sum = 0
-    for i in range(M):
-        for j in range(N):
-            sum += matr[i][j]
-    print("Sum elements of matrix:", sum)
-
-    for i in range(M):
-        sum_column = 0
-        for j in range(N):
-            sum_column += matr[i][j]
-        print("Column percent:", sum_column / sum * 100)
-
-matr = random_matrix(4, 5, 0, 10)
-for row in matr:
-    print(row)
-
-print(sum_el_matrix(matr, 4, 5))
-
-
-# task 10
-def mul_k_column_el(matr, M, N, K):
-    for i in range(M):
-        elem = matr[i][K]
-        for j in range(N):
-            matr[i][j] *= elem
 
     for row in matr:
         print(row)
@@ -254,6 +273,6 @@ matr = random_matrix(4, 5, 0, 10)
 for row in matr:
     print(row)
 
-K = int(input("Enter K column from 0 to 4: "))
-print("Matrix after multiplication by K column:")
-mul_k_column_el(matr, 4, 5, K)
+L = int(input("Enter L line from 0 to 3: "))
+print("Matrix after sum by L line:")
+sum_l_line_el(matr, 4, 5, L)
