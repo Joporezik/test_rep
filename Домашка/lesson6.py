@@ -172,50 +172,48 @@
 
 
 import random
-# # task 7
-# M = int(input("Enter the number of lines: "))
-# N = int(input("Enter the number of columns: "))
-# min_num = int(input("Enter the minimum number: "))
-# max_num = int(input("Enter the maximum number: "))
-# matrix = [[random.randint(min_num, max_num) for i in range(N)] for j in range(M)]
-# for el in matrix:
-#     print(el)
+# task 7
+def random_matrix(M, N, min_num, max_num):
+    matrix = [[random.randint(min_num, max_num) for i in range(N)] for j in range(M)]
+    matr = []
+    for el in matrix:
+        matr.append(el)
+    return matr
+print(random_matrix(4, 5, 0, 10))
+
+
+# task 8
+def max_min_elem_in_matrix(matrix, M, N):
+    min_elem = matrix[0][0]
+    max_elem = matrix[0][0]
+    min_index = {'i': None, 'j': None}
+    max_index = {'i': None, 'j': None}
+    for i in range(M):
+        for j in range(N):
+            if matrix[i][j] > max_elem:
+                max_elem = matrix[i][j]
+                max_index['i'] = i
+                max_index['j'] = j
+
+            elif matrix[i][j] <= min_elem:
+                min_elem = matrix[i][j]
+                min_index['i'] = i
+                min_index['j'] = j
+    max_ind = []
+    min_ind = []
+    for key, value in max_index.items():
+        max_ind.append(value)
+    for key, value in min_index.items():
+        min_ind.append(value)
+
+    print("Max index:", max_ind)
+    print("Min index:", min_ind)
+
+matr = random_matrix(4, 5, 0, 10)
+print(matr)
+max_min_elem_in_matrix(matr, 4, 5)
 
 
 
-# # task 8
-# M = int(input("Enter the number of lines: "))
-# N = int(input("Enter the number of columns: "))
-# min_num = int(input("Enter the minimum number: "))
-# max_num = int(input("Enter the maximum number: "))
-# matrix = [[random.randint(min_num, max_num) for i in range(N)] for j in range(M)]
-# min_elem = matrix[0][0]
-# max_elem = matrix[0][0]
-# min_index = {'i': None, 'j': None}
-# max_index = {'i': None, 'j': None}
-# for i in range(M):
-#     for j in range(N):
-#         if matrix[i][j] > max_elem:
-#             max_elem = matrix[i][j]
-#             max_index['i'] = i
-#             max_index['j'] = j
-#
-#         elif matrix[i][j] <= min_elem:
-#             min_elem = matrix[i][j]
-#             min_index['i'] = i
-#             min_index['j'] = j
-# for el in matrix:
-#     print(el)
-# max_ind = []
-# min_ind = []
-# for key, value in max_index.items():
-#     max_ind.append(value)
-# for key, value in min_index.items():
-#     min_ind.append(value)
-#
-# print("Max index:", max_ind)
-# print("Min index:", min_ind)
-
-
-
+# task 9
 
