@@ -259,20 +259,36 @@ print("")
 # mul_k_column_el(matr, 4, 5, K)
 
 
-def sum_l_line_el(matr, M, N, L):
+# # task 11
+# def sum_l_line_el(matr, M, N, L):
+#     for i in range(M):
+#         for j in range(N):
+#             elem = matr[L][j]
+#             matr[i][j] += elem
+#
+#
+#     for row in matr:
+#         print(row)
+#
+# matr = random_matrix(4, 5, 0, 10)
+# for row in matr:
+#     print(row)
+#
+# L = int(input("Enter L line from 0 to 3: "))
+# print("Matrix after sum by L line:")
+# sum_l_line_el(matr, 4, 5, L)
+
+
+#task 12
+def search_num_in_matrix(matr, M, N, H):
+
     for i in range(M):
         for j in range(N):
-            elem = matr[L][j]
-            matr[i][j] += elem
-
-
-    for row in matr:
-        print(row)
+            if matr[i][j] == H:
+                print(f"{range(N).index(j)} column has {H} ")
 
 matr = random_matrix(4, 5, 0, 10)
 for row in matr:
     print(row)
-
-L = int(input("Enter L line from 0 to 3: "))
-print("Matrix after sum by L line:")
-sum_l_line_el(matr, 4, 5, L)
+H = int(input("Enter the desired number: "))
+search_num_in_matrix(matr, 4, 5, H)
