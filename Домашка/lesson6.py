@@ -294,21 +294,37 @@ print("")
 # search_num_in_matrix(matr, 4, 5, H)
 
 
-# task 13
-def sum_dia_el(matr, M, N):
-    main_sum = 0
-    sec_sum = 0
-    for i in range(M):
-        for j in range(N):
-            main_sum += matr[i][i]
-            sec_sum += matr[i][N - i - 1]
-            break
-    print("The sum of the elements of the main diagonal:", main_sum)
-    print("The sum of the elements of the secondary diagonal", sec_sum)
+# # task 13
+# def sum_dia_el(matr, M, N):
+#     main_sum = 0
+#     sec_sum = 0
+#     for i in range(M):
+#         for j in range(N):
+#             main_sum += matr[i][i]
+#             sec_sum += matr[i][N - i - 1]
+#             break
+#     print("The sum of the elements of the main diagonal:", main_sum)
+#     print("The sum of the elements of the secondary diagonal", sec_sum)
+#
+# matr = random_matrix(4, 5, 0, 10)
+# for row in matr:
+#     print(row)
+#
+# sum_dia_el(matr, 4, 5)
 
-matr = random_matrix(4, 5, 0, 10)
+
+# task 14
+def even_count_1_in_matrix(matr, M):
+    for i in range(M):
+        if matr[i].count(1) % 2 == 0:
+            matr[i].append(0)
+        else:
+            matr[i].append(1)
+    for row in matr:
+        print(row)
+
+matr = random_matrix(4, 5, 0, 1)
 for row in matr:
     print(row)
-
-sum_dia_el(matr, 4, 5)
-
+print("")
+even_count_1_in_matrix(matr, 4)
