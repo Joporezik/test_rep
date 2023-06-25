@@ -279,16 +279,36 @@ print("")
 # sum_l_line_el(matr, 4, 5, L)
 
 
-#task 12
-def search_num_in_matrix(matr, M, N, H):
+# #task 12
+# def search_num_in_matrix(matr, M, N, H):
+#
+#     for i in range(M):
+#         for j in range(N):
+#             if matr[i][j] == H:
+#                 print(f"{range(N).index(j)} column has {H} ")
+#
+# matr = random_matrix(4, 5, 0, 10)
+# for row in matr:
+#     print(row)
+# H = int(input("Enter the desired number: "))
+# search_num_in_matrix(matr, 4, 5, H)
 
+
+# task 13
+def sum_dia_el(matr, M, N):
+    main_sum = 0
+    sec_sum = 0
     for i in range(M):
         for j in range(N):
-            if matr[i][j] == H:
-                print(f"{range(N).index(j)} column has {H} ")
+            main_sum += matr[i][i]
+            sec_sum += matr[i][N - i - 1]
+            break
+    print("The sum of the elements of the main diagonal:", main_sum)
+    print("The sum of the elements of the secondary diagonal", sec_sum)
 
 matr = random_matrix(4, 5, 0, 10)
 for row in matr:
     print(row)
-H = int(input("Enter the desired number: "))
-search_num_in_matrix(matr, 4, 5, H)
+
+sum_dia_el(matr, 4, 5)
+
